@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/groceryFragment"
+        android:name="com.usu.todosmvvm.TodosFragment"
+        android:label="fragment_todos"
+        tools:layout="@layout/fragment_todos" >
+        <action
+            android:id="@+id/Grocery_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.usu.todosmvvm.models.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/home_to_grocery"
+            app:destination="@id/groceryFragment" />
+        <action
+            android:id="@+id/home_to_tasks"
+            app:destination="@id/tasksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.usu.todosmvvm.TasksFragment"
+        android:label="fragment_tasks"
+        tools:layout="@layout/fragment_tasks" >
+        <action
+            android:id="@+id/tasks_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
